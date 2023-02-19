@@ -1,0 +1,12 @@
+<div [formGroup]="form" [ngClass]="meta.class" >
+  <label for="{{ meta.key }}">{{ meta.label }}</label>
+  <input
+    [formControlName]="meta.key"
+    [id]="meta.key"
+    [type]="meta.type"
+    [minlength]="meta.minLength ? meta.minLength : ''"  
+    [maxlength]="meta.maxLength ? meta.maxLength : ''"
+    [pattern]="meta.pattern ? meta.pattern : ''"
+    class="form-control"
+  />
+</div>

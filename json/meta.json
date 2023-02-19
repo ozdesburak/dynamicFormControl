@@ -1,0 +1,94 @@
+[
+  {
+    "controlType": "dropdown",
+    "key": "country",
+    "label":"Country",
+    "options": [
+      { "key": "IR", "value": "Iran" },
+      { "key": "USA", "value": "United States of America" },
+      { "key": "UK", "value": "United Kingdom" }
+    ],
+    "order": 3,
+    "required": true,
+    "class":"col-12"
+
+  },
+  
+  {
+    "controlType": "textinput",
+    "label":"Full Name",
+    "key": "fullName",
+    "required": true,
+    "type":"text",
+    "minLength":3,
+    "maxLength":8,
+    "order": 10,
+    "class":"col-12"
+
+  },
+  {
+    "controlType": "textinput",
+    "label":"Mail",
+    "key": "mail",
+    "required": true,
+    "type":"text",
+    "minLength":3,
+    "order": 1,
+    "pattern": "^\\S+@\\S+\\.\\S+$",
+    "class":"col-5"
+
+
+  },
+
+  {
+    "controlType": "textinput",
+    "label":"Mobile Number",
+    "key": "mobileNumber",
+    "required": true,
+    "type":"number",
+    "pattern":"^[0-9]{11}$",
+    "order": 2
+  },
+
+  {
+    "controlType": "textinput",
+    "key": "emailAddress",
+    "label": "Email",
+    "type":"email",
+    "order": 4
+  },
+
+  {
+    "controlType": "textinput",
+    "key": "birthDate",
+    "label": "BirthDate",
+    "type":"date",
+    "order": 4
+  },
+
+  {
+    "controlType": "checkbox",
+    "key": "programmer",
+    "label": "Programmer",
+    "order": 5
+  },
+
+  {
+    "controlType": "radiobutton",
+    "key": "region",
+    "label": "Region",
+    "name" : "region",
+    "options": [
+      { "key": "muslim", "value": "muslim" },
+      { "key": "christian", "value": "christian" }
+    ],
+    "order": 6
+  },
+
+  {
+    "controlType": "textarea",
+    "key": "address",
+    "label": "Address",
+    "order": 7
+  }
+]

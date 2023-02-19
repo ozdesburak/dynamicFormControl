@@ -1,0 +1,56 @@
+<div>
+  <div [ngSwitch]="control.controlType">
+    <app-text-input
+      *ngSwitchCase="'textinput'"
+      [meta]="control"
+      [form]="form"
+      [ngClass]="{ disabled: role === 'isUser' }"
+    ></app-text-input>
+    <app-dropdown
+      *ngSwitchCase="'dropdown'"
+      [meta]="control"
+      [form]="form"
+    ></app-dropdown>
+    <app-checkbox
+      *ngSwitchCase="'checkbox'"
+      [meta]="control"
+      [form]="form"
+      [ngClass]="{ disabled: role === 'isUser' }"
+    ></app-checkbox>
+    <app-radiobutton
+      *ngSwitchCase="'radiobutton'"
+      [meta]="control"
+      [form]="form"
+    ></app-radiobutton>
+    <app-text-area
+      *ngSwitchCase="'textarea'"
+      [meta]="control"
+      [form]="form"
+      [ngClass]="{ disabled: role === 'isUser' }"
+    ></app-text-area>
+  </div>
+
+  <div class="errorMessage"
+   *ngIf="isValid">
+    <div style="color:red"
+    [ngClass]="{ disabled: role === 'isUser' }"
+     *ngIf="this.form.controls[control.key]?.errors?.minlength">
+      Min char is {{ control.minLength }}
+    </div>
+    <div style="color:red"
+    [ngClass]="{ disabled: role === 'isUser' }"
+     *ngIf="this.form.controls[control.key]?.errors?.maxLength">
+      Max char is {{ control.maxLength }}
+    </div>
+    <div style="color:red" 
+    [ngClass]="{ disabled: role === 'isUser' }"
+    *ngIf="this.form.controls[control.key]?.errors?.required">
+      {{ control.label }} is required
+    </div>
+    <div style="color:red" 
+    [ngClass]="{ disabled: role === 'isUser' }"
+    *ngIf="this.form.controls[control.key]?.errors?.pattern">
+      {{ control.label }} is invalid
+    </div>
+  </div>
+</div>

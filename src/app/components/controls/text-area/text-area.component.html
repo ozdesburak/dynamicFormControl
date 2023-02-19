@@ -1,0 +1,12 @@
+<div [formGroup]="form" [ngClass]="meta.class" >
+  <label for="{{ meta.key }}">{{ meta.label }}</label>
+  <textarea
+    [formControlName]="meta.key"
+    [id]="meta.key"
+    [name]="meta.key"
+    rows="4"
+    cols="50"
+    class="form-control"
+  >
+  </textarea>
+</div>

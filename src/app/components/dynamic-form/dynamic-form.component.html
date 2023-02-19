@@ -1,0 +1,40 @@
+<div class="dynamic-form">
+  <div>
+    <label for="role">Select Role</label>
+    <select
+      id="role"
+      name="role"
+      class="form-control"
+      (change)="roleChane($event)"
+      [(ngModel)]="role"
+    >
+      <option value=""></option>
+      <option value="isUser">User</option>
+      <option value="isAdmin">Admin</option>
+    </select>
+  </div>
+  <form #regForm="ngForm" (ngSubmit)="onSubmit()" [formGroup]="form" #formDirective="ngForm" >
+    <div *ngFor="let control of meta" class="form-row">
+      <app-dynamic-field
+        [control]="control"
+        [form]="form"
+        [role]="role"
+        [submitted]="submitted"
+      ></app-dynamic-field>
+    </div>
+
+    <div class="form-row  mt-2" style="float: right;" >
+      <button type="submit" class="btn btn-success" >
+        {{submitButtonText}}
+      </button>
+      <button (click)="resetForm()" type="button" class="btn btn-dark  m-1" >
+        Reset
+      </button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="form-row mt-2">
+    <strong>Saved the following values</strong><br />{{ payLoad }}
+  </div>
+
+</div>

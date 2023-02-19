@@ -1,0 +1,9 @@
+<div [formGroup]="form" [ngClass]="meta.class" >
+  <label for="{{ meta.key }}" style="margin-right: 5px;">{{ meta.label }}</label>
+  <input
+    type="checkbox"
+    [id]="meta.key"
+    [name]="meta.key"
+    [formControlName]="meta.key"
+ />
+</div>

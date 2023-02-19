@@ -1,0 +1,13 @@
+<div [formGroup]="form" [ngClass]="meta.class" >
+  <label for="{{ meta.key }}">{{ meta.label }}</label>
+  <div *ngFor="let item of meta.options" style="display: inline-block; margin-left: 5px;">
+    <label [attr.for]="item.key">{{ item.value }}</label>
+    <input
+      [formControlName]="meta.key"
+      [id]="meta.key"
+      type="radio"
+      [value]="item.key"
+      class="form-check form-check-inline"
+    />
+  </div>
+</div>
